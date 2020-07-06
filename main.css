@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,700i,900i&display=swap');
+
+html{
+  font-family: Montserrat;
+  font-size: 25pt;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+}
+
+p{
+  text-align: center;
+}
+
+img{
+  text-align: center;
+  margin: auto;
+
+}
+
+#instructions{
+  display: block;
+  text-align: right;
+  width: 250px;
+  font-size: 12pt;
+  position: absolute;
+  top: 90%;
+  right: 20px;
+}
+
+#intro{
+  display: none;
+}
+
+#a{
+  display: none;
+}
+
+#b{
+  display: none;
+}
+
+#c{
+  display: none;
+}
+
+#d{
+  display: none;
+}
+
+#e{
+  display: none;
+}
+
+#f{
+  display: none;
+}
+
+#g{
+  display: none;
+}
+
+#h{
+  display: none;
+}
+
+#i{
+  display: none;
+}
+
+#j{
+  display: none;
+}
+
+#k{
+  display: none;
+}
+
+#l{
+  display: none;
+}
+
+#m{
+  display: none;
+}
+
+#n{
+  display: none;
+}
+
+#o{
+  display: none;
+}
+
+#p{
+  display: none;
+}
+
+#q{
+  display: none;
+}
+
+#r{
+  display: none;
+}
+
+#s{
+  display: none;
+}
+
+#t{
+  display: none;
+}
+
+#u{
+  display: none;
+}
+
+#v{
+  display: none;
+}
+
+#w{
+  display: none;
+}
+
+#outro{
+  display: none;
+  width: 400px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+#walk {
+  display: none;
+}
+
+#walk2 {
+  display: none;
+}
+
+#talk{
+  display: none;
+}
+
+#chisel{
+  display: none;
+}
+
+#time{
+  display: none;
+}
+
+#cordaveralogo{
+  display: none;
+  max-width: 550px;
+  margin: auto;
+}
+
+@media screen and (max-width: 5000px) and (min-width: 1850px){
+  html{
+    background-color: rgb(255, 0, 0);
+  }
+
+  #instructions{
+    display: none;
+  }
+
+  #intro{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1859px) and (min-width: 1800px){
+  html{
+    background-color: rgb(255, 10, 0);
+  }
+}
+
+@media screen and (max-width: 1799px) and (min-width: 1750px){
+  html{
+    background-color: rgb(255, 20, 0);
+  }
+}
+
+@media screen and (max-width: 1749px) and (min-width: 1700px){
+  html{
+    background-color: rgb(255, 30, 0);
+  }
+}
+
+@media screen and (max-width: 1699px) and (min-width: 1650px){
+  html{
+    background-color: rgb(255, 40, 0);
+  }
+
+  #a{
+    display: block;
+  }
+
+  #b{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1649px) and (min-width: 1600px){
+  html{
+    background-color: rgb(255, 50, 0);
+  }
+
+  #c{
+    display: block;
+  }
+
+  #d{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1599px) and (min-width: 1550px){
+  html{
+    background-color: rgb(255, 60, 0);
+  }
+
+  #e{
+    display: block;
+  }
+
+  #f{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1549px) and (min-width: 1500px){
+  html{
+    background-color: rgb(255, 70, 0);
+  }
+
+  #e{
+    display: block;
+  }
+
+  #f{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1499px) and (min-width: 1450px){
+  html{
+    background-color: rgb(255, 80, 0);
+  }
+
+  #g{
+    display: block;
+  }
+
+  #h{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1449px) and (min-width: 1400px){
+  html{
+    background-color: rgb(255, 90, 0);
+  }
+
+  #i{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1399px) and (min-width: 1350px){
+  html{
+    background-color: rgb(255, 100, 0);
+  }
+
+  #j{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1349px) and (min-width: 1300px){
+  html{
+    background-color: rgb(255, 110, 0);
+  }
+
+  #k{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1299px) and (min-width: 1250px){
+  html{
+    background-color: rgb(255, 120, 0);
+  }
+
+  #l{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1249px) and (min-width: 1200px){
+  html{
+    background-color: rgb(255, 130, 0);
+  }
+
+  #m{
+    display: block;
+  }
+
+  #n{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1150px){
+  html{
+    background-color: rgb(255, 140, 0);
+  }
+
+  #o{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1149px) and (min-width: 1100px){
+  html{
+    background-color: rgb(255, 150, 0);
+  }
+
+  #p{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1099px) and (min-width: 1050px){
+  html{
+    background-color: rgb(255, 160, 0);
+  }
+
+  #q{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1049px) and (min-width: 1000px){
+  html{
+    background-color: rgb(255, 170, 0);
+  }
+
+  #r{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 999px) and (min-width: 950px){
+  html{
+    background-color: rgb(255, 180, 0);
+  }
+
+  #s{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 949px) and (min-width: 900px){
+  html{
+    background-color: rgb(255, 190, 0);
+  }
+
+  #t{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 899px) and (min-width: 850px){
+  html{
+    background-color: rgb(255, 200, 0);
+  }
+}
+
+@media screen and (max-width: 849px) and (min-width: 800px){
+  html{
+    background-color: rgb(255, 210, 0);
+  }
+
+  #u{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 799px) and (min-width: 750px){
+  html{
+    background-color: rgb(255, 220, 0);
+  }
+
+  #v{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 749px) and (min-width: 700px){
+  html{
+    background-color: rgb(255, 230, 0);
+  }
+
+  #w{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 699px) and (min-width: 650px){
+  html{
+    background-color: rgb(255, 240, 0);
+  }
+
+  #instructions{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 649px) and (min-width: 600px){
+  html{
+    background-color: rgb(255, 250, 0);
+  }
+
+  #instructions{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) and (min-width: 400px){
+  html{
+    background-color: rgb(220, 255, 0);
+  }
+
+  #outro{
+    display: block;
+  }
+
+  #instructions{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1700px) and (min-width: 1600px){
+  #walk {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1599px) and (min-width: 1450px){
+  #talk{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1449px) and (min-width: 1300px){
+  #walk2{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1299px) and (min-width: 1200px){
+  #chisel{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1000px){
+  #time{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 749px) and (min-width: 700px){
+  #cordaveralogo{
+    display: block;
+  }
+}
