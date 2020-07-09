@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700i,900i&display=swap');
+
+#footer {
+  position:fixed;
+  right:100px;
+  bottom:40px;
+  margin:0;
+  padding:0;
+}
+
+#backbtn {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 150px;
+}
+
+html {
+  background-color: black;
+  color: white;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  padding: 100px;
+}
+
+h1 {
+  font-weight: 900;
+  font-style: italic;
+}
+
+h2 {
+  font-weight: 700;
+  font-style: italic;
+}
+
+a:link {
+    color: #cc1414;
+}
+
+/* visited link */
+a:visited {
+    color: #cc1414;
+    opacity:.8;
+	}
+
+/* mouse over link */
+a:hover {
+    color: #ff8c8c;
+    opacity:1;
+}
+
+/* selected link */
+a:active {
+    color:  #ffdfd6;
+    opacity:1;
+}
+
+#backbtn > a {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: white;
+}
