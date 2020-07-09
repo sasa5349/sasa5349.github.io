@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,700i,900i&display=swap');
+
+html{
+  background-color: black;
+  font-family: Montserrat;
+}
+
+h1{
+  font-size: 4vh;
+}
+
+button {
+  text-align: center;
+  display: block;
+  line-height: 6vh;
+  margin: auto;
+  font-family: Montserrat;
+  font-size: 4vh;
+  font-style: italic;
+  font-weight: 900;
+  margin-top: 3vh;
+}
+
+#Directions {
+  display: none;
+  color: white;
+  max-width: 25vw;
+  margin-left: 4vw;
+  margin-top: 3vh;
+  float: left;
+}
+
+#lvlScore {
+  display: none;
+  color: white;
+  width: 25vw;
+  margin-left: 4vw;
+  margin-top: 3vh;
+  font-size: 4vh;
+  float: left;
+}
+
+#Score {
+  display: none;
+  color: white;
+  width: 25vw;
+  margin-left: 4vw;
+  margin-top: 3vh;
+  font-size: 4vh;
+  float: left;
+}
+
+#Frequency {
+  display: none;
+  color: white;
+  width: 25vw;
+  margin-left: 4vw;
+  margin-top: 3vh;
+  font-size: 2vh;
+  float: left;
+}
+
+#restart {
+  margin-left: 4vw;
+}
