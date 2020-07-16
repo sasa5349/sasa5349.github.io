@@ -25,8 +25,7 @@ function startGame() {
     document.getElementById("Score").style.display = "inline";
     document.getElementById("Frequency").style.display = "inline";
     myGameArea.start();
-    console.log('Game area created.');
-    myGamePiece = new component(30, 30, '#d1477c', 385, 385);
+    myGamePiece = new component(30, 30, '#d1477c', 385, 200);
     finishLine = new component(900, 30, '#ccff00', -50, 770);
     wallTop = new component(900, 10, "red" , -50, -7);
     wallLeft = new component(10, 900, "black" , 0, -50);
@@ -38,6 +37,7 @@ var myGameArea = {
     canvas: document.createElement("canvas"),
       //myGameArea.canvas refers to this canvas just created
     start: function() {
+        console.log('Game area created.');
       //myGameArea.start refers to this function that starts the canvas
         this.canvas.width = 800;
         this.canvas.height = 800;
@@ -110,18 +110,20 @@ function component(width, height, color, x, y) {
         crash = false;
     }
     this.move = function(){
-        if(keys.up){
-            myGamePiece.y -= 4;
-        }
-        if(keys.down){
-            myGamePiece.y += 4;
-        }
-        if(keys.left) {
-            myGamePiece.x -= 4;
-        }
-        if(keys.right){
-            myGamePiece.x += 4;
-        }
+      var speed = 2*(1 +(level*.05))
+      if(keys.up){
+          myGamePiece.y -= speed;
+      }
+      if(keys.down){
+          myGamePiece.y += speed;
+      }
+      if(keys.left) {
+          myGamePiece.x -= speed*1.15;
+      }
+      if(keys.right){
+          myGamePiece.x += speed*1.5;
+      }
+      return speed;
     }
     return crash;
   }
@@ -152,7 +154,7 @@ function updateGameArea() {
     wallRight.update();
     wallBottom.update();
     myGamePiece.x = 385;
-    myGamePiece.y = 385;
+    myGamePiece.y = 200;
     movingObstacles = [];
     myGamePiece.update();
     myGameArea.stop();
@@ -192,7 +194,7 @@ function updateGameArea() {
     wallRight.update();
     wallBottom.update();
     myGamePiece.x = 385;
-    myGamePiece.y = 385;
+    myGamePiece.y = 200;
     movingObstacles = [];
     if (obstFreq >= 300){
       obstFreq -= 30;
@@ -214,6 +216,7 @@ function updateGameArea() {
   myGameArea.frameNo += 1;
   if (myGameArea.frameNo == 1 || everyinterval(obstFreq)) {   //At the start, or every interval
     console.log('New obstacle pushed. Another one coming in ',obstFreq,' pixels.');
+    console.log('obstacle speed: ', 1 +(level*.05), '. Your speed: ', myGamePiece.move())
     y = myGameArea.canvas.height;
     minWidth = 150;
     maxWidth = 700;
@@ -239,7 +242,6 @@ function updateGameArea() {
   wallTop.update();
   wallBottom.update();
   for (i=0; i < movingObstacles.length; i += 1){
-    console.log('obstacle speed: ', 1 +(level*.05))
     movingObstacles[i].y -= 1 +(level*.05);
     movingObstacles[i].update();
   }
