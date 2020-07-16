@@ -197,10 +197,16 @@ function updateGameArea() {
     myGamePiece.y = 200;
     movingObstacles = [];
     if (obstFreq >= 100){
-      obstFreq -= 7.5;
+      obstFreq -= 10;
+    }
+    else if (obstFreq >= 46 && obstFreq < 100){
+      obstFreq -= 5;
+    }
+    else if (obstFreq >= 30 && obstFreq < 46){
+      obstFreq -= 1;
     }
     else {
-      obstFreq -= 5;
+      obstFreq;
     }
     myGamePiece.update();
     level++;
