@@ -3,25 +3,18 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="test.css">
-  <style media="screen">
-  canvas {
-    background-color: #f1f1f1;
-    display: block;
-    margin-right: 4vw;
-    margin-top: 3vh;
-    float: right;
-  }
-  </style>
 </head>
 <body>
   <button id="start" type="button" name="button" onclick="startGame()">START GAME</button>
   <div id = "Directions">
-    <h1>How to Play:</h1>
-    <h3>- Use your arrow keys to move around!</h3>
-    <h3>- Cross the yellow finish line at the bottom to win!</h3>
-    <h3>- Don't touch the sides!</h3>
-    <h3>- Don't get pulled off screen!</h3>
-    <h3>- The lower your score, the better!</h3>
+    <p id="howTo"> How to Play: </p>
+    <p>- Use your arrow keys to move around!</p>
+    <p>- Cross the yellow finish line at the bottom to win!</p>
+    <p>- Don't touch the sides!</p>
+    <p>- Don't get pulled off screen!</p>
+    <p>- The lower your score, the better!</p>
+  </div>
+  <div id = "lvl">
   </div>
   <div id = "lvlScore">
   </div>
@@ -29,8 +22,9 @@
   </div>
   <div id = "Frequency">
   </div>
-  <button id="restart" type="button" name="button" style="display: none;" onclick="startGame()">RESTART GAME</button>
-  <p></p>
+  <div id = "HiScore">
+  </div>
+  <button id="restart" type="button" name="button" onclick="startGame()">RESTART GAME</button>
   <script src="test.js" type="text/javascript"></script>
 </body>
 </html>

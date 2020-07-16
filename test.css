@@ -5,61 +5,122 @@ html{
   font-family: Montserrat;
 }
 
-h1{
-  font-size: 4vh;
+#start{
+  background-color: white;
+  color: black;
+  /* margin-top: 25%; */
+  width: 810px;
+  height: 810px;
+  display: block;
+  margin-right: 40px;
+  margin-top: 30px;
+  float: right;
+  border: 5px solid white;
+  padding: 0;
+}
+
+#start:hover{
+  transition: 1s;
+  background-color: black;
+  color: white;
+}
+
+#start:active{
+  transition: 0.2s;
+  background-color: black;
+  color: #7d7d7d;
+}
+
+#restart{
+  margin-top: 30px;
+  display: none;
 }
 
 button {
   text-align: center;
   display: block;
-  line-height: 6vh;
+  height: 65px;
   margin: auto;
   font-family: Montserrat;
-  font-size: 4vh;
+  font-size: 20pt;
   font-style: italic;
   font-weight: 900;
-  margin-top: 3vh;
 }
 
 #Directions {
-  display: none;
+  /* display: none; */
   color: white;
-  max-width: 25vw;
-  margin-left: 4vw;
-  margin-top: 3vh;
+  max-width: 300px;
+  margin-left: 40px;
+  margin-top: 30px;
+  float: left;
+  font-size: 15pt;
+}
+
+#howTo{
+  margin-top: 0;
+  font-size: 25pt;
+}
+
+#HiScore {
+  display: none;
+  color: #ccff00;
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 12pt;
   float: left;
 }
 
 #lvlScore {
   display: none;
   color: white;
-  width: 25vw;
-  margin-left: 4vw;
-  margin-top: 3vh;
-  font-size: 4vh;
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 30px;
+  float: left;
+}
+
+#lvl {
+  display: inline;
+  color: white;
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 30px;
   float: left;
 }
 
 #Score {
   display: none;
   color: white;
-  width: 25vw;
-  margin-left: 4vw;
-  margin-top: 3vh;
-  font-size: 4vh;
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 30px;
   float: left;
 }
 
 #Frequency {
   display: none;
   color: white;
-  width: 25vw;
-  margin-left: 4vw;
-  margin-top: 3vh;
-  font-size: 2vh;
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 12pt;
   float: left;
 }
 
 #restart {
-  margin-left: 4vw;
+  margin-left: 40px;
+}
+
+canvas {
+  border: 5px solid white;
+  background-color: #f1f1f1;
+  display: block;
+  margin-right: 40px;
+  margin-top: 30px;
+  float: right;
 }
