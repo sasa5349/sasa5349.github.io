@@ -1,6 +1,5 @@
 var myGamePiece;
 var movingObstacles = [];
-var arrayRNG = [0,0,0,0,0,0,0,0,0,0,0,0,.1,.2,.3,.4,.5];
 var wallLeft;
 var wallRight;
 var wallTop;
@@ -8,6 +7,12 @@ var wallBottom;
 var obstFreq;
 var totalScore;
 var level;
+var keys = {
+    up: false,
+    down: false,
+    left: false,
+    right: false
+};
 
 function startGame() {
     console.log('New game started.');
@@ -29,11 +34,6 @@ function startGame() {
     wallBottom = new component(900, 10, "black" , 0, 810);
 }
 
-function randFreq(array){
-  var randomItem = array[Math.floor(Math.random()*array.length)];
-  return randomItem
-}
-
 var myGameArea = {
     canvas: document.createElement("canvas"),
       //myGameArea.canvas refers to this canvas just created
@@ -45,8 +45,20 @@ var myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
         this.frameNo = 0;
-        window.addEventListener('keydown', function (e) {myGameArea.key = e.which || e.keyCode;})
-        window.addEventListener('keyup', function (e) {myGameArea.key = false;})
+        window.onkeydown = function(e){
+             var kc = e.keyCode;
+             if(kc === 37) keys.left = true;
+             if(kc === 38) keys.up = true;
+             if(kc === 39) keys.right = true;
+             if(kc === 40) keys.down = true;
+         };
+        window.onkeyup = function(e){
+             var kc = e.keyCode;
+             if(kc === 37) keys.left = false;
+             if(kc === 38) keys.up = false;
+             if(kc === 39) keys.right = false;
+             if(kc === 40) keys.down = false;
+        };
     },
     clear: function(){
       //myGameArea.clear refers to this function that clears the canvas
@@ -57,7 +69,6 @@ var myGameArea = {
         clearInterval(this.interval);
     }
 }
-
 
 var hiScore ={
   score: 0,
@@ -82,10 +93,6 @@ function component(width, height, color, x, y) {
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
     }
-    this.newPos = function() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-    }
     this.crashWith = function(otherobj) {
       var myleft = this.x;
       var myright = this.x + (this.width);
@@ -102,18 +109,32 @@ function component(width, height, color, x, y) {
       (myleft > otherright)) {
         crash = false;
     }
+    this.move = function(){
+        if(keys.up){
+            myGamePiece.y -= 4;
+        }
+        if(keys.down){
+            myGamePiece.y += 4;
+        }
+        if(keys.left) {
+            myGamePiece.x -= 4;
+        }
+        if(keys.right){
+            myGamePiece.x += 4;
+        }
+    }
     return crash;
   }
 }
 
 function updateGameArea() {
-  for (i = 0; i < movingObstacles.length; i += 1){
-    if (myGamePiece.crashWith(movingObstacles[i])) {  //Collision with a moving barrier
+  for (i = 0; i < movingObstacles.length; i += 1){  //Collision with a moving barrier
+    if (myGamePiece.crashWith(movingObstacles[i])) {
       myGamePiece.y = (movingObstacles[i].y-30);
       // console.log('barrier collision');
     }
   }
-  if (myGamePiece.crashWith(wallLeft)) {       //Collision with Left wall
+  if (myGamePiece.crashWith(wallLeft)) {            //Collision with Left wall
     myGamePiece.x = 10;
     // console.log('barrier collision');
   }
@@ -173,11 +194,17 @@ function updateGameArea() {
     myGamePiece.x = 385;
     myGamePiece.y = 385;
     movingObstacles = [];
-    if (obstFreq < 300){
+    if (obstFreq >= 300){
+      obstFreq -= 30;
+    }
+    else if (obstFreq < 300){
+      obstFreq -= 20;
+    }
+    else if (obstFreq < 200){
       obstFreq -= 10;
     }
     else{
-      obstFreq = Math.round(obstFreq*.8);
+      obstFreq -= 5;
     }
     myGamePiece.update();
     level++;
@@ -185,7 +212,7 @@ function updateGameArea() {
   }
   myGameArea.clear();
   myGameArea.frameNo += 1;
-  if (myGameArea.frameNo == 1 || everyinterval(obstFreq)) {
+  if (myGameArea.frameNo == 1 || everyinterval(obstFreq)) {   //At the start, or every interval
     console.log('New obstacle pushed. Another one coming in ',obstFreq,' pixels.');
     y = myGameArea.canvas.height;
     minWidth = 150;
@@ -212,29 +239,14 @@ function updateGameArea() {
   wallTop.update();
   wallBottom.update();
   for (i=0; i < movingObstacles.length; i += 1){
-    movingObstacles[i].y += -1;
+    console.log('obstacle speed: ', 1 +(level*.05))
+    movingObstacles[i].y -= 1 +(level*.05);
     movingObstacles[i].update();
   }
   wallLeft.update();
   wallRight.update();
   myGamePiece.speedX = 0;
   myGamePiece.speedY = 0;
-  if (myGameArea.key && myGameArea.key == 37){
-    myGamePiece.speedX = -3;
-  }
-
-  if (myGameArea.key && myGameArea.key == 39){
-    myGamePiece.speedX = 3;
-  }
-
-  if (myGameArea.key && myGameArea.key == 38){
-    myGamePiece.speedY = -3;
-  }
-
-  if (myGameArea.key && myGameArea.key == 40){
-    myGamePiece.speedY = 3;
-  }
-
-  myGamePiece.newPos();
+  myGamePiece.move();
   myGamePiece.update();
 }
