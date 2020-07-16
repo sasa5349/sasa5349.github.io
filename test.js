@@ -16,7 +16,7 @@ var keys = {
 
 function startGame() {
     console.log('New game started.');
-    obstFreq = 500; //Obstacle Frequency
+    obstFreq = 200; //Obstacle Frequency
     totalScore = 0; //Total Score throughout all levels
     level = 1;      //Level counter
     document.getElementById("start").style.display = "none";
@@ -196,16 +196,10 @@ function updateGameArea() {
     myGamePiece.x = 385;
     myGamePiece.y = 200;
     movingObstacles = [];
-    if (obstFreq >= 300){
-      obstFreq -= 30;
+    if (obstFreq >= 100){
+      obstFreq -= 7.5;
     }
-    else if (obstFreq < 300){
-      obstFreq -= 20;
-    }
-    else if (obstFreq < 200){
-      obstFreq -= 10;
-    }
-    else{
+    else {
       obstFreq -= 5;
     }
     myGamePiece.update();
