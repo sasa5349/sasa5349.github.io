@@ -118,7 +118,7 @@ function component(width, height, color, x, y) {
           myGamePiece.y += speed;
       }
       if(keys.left) {
-          myGamePiece.x -= speed*1.15;
+          myGamePiece.x -= speed*1.5;
       }
       if(keys.right){
           myGamePiece.x += speed*1.5;
